@@ -1,0 +1,78 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, user-scalable=yes" charset="utf-8">
+    <title>Test</title>
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.js"
+      integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+      crossorigin="anonymous"></script>
+</head>     
+
+<style>
+
+.outer {
+    background-color: grey;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.inner {
+    background-color: black;
+    width: 200px;
+    height: 200px;
+    margin-bottom: 20px;
+}
+
+</style>
+
+<body>
+
+    <div class="outer">
+        <div class="inner"></div>
+        <div class="inner"></div>
+        <div class="inner"></div>
+    </div>
+
+</body>
+</html>
+<script>
+$(document).ready(function() {
+   
+    const data = [
+        {
+            product_name: "Nail",
+            count: 67,
+            price_for_all: 364
+        },
+        {
+            product_name: "Hammer",
+            count: 43,
+            price_for_all: 453
+        },
+        {
+            product_name: "Tile",
+            count: 23,
+            price_for_all: 553
+        }
+    ]
+
+    // Инициализируем переменные, в которые будем записывать суммы
+    let count = 0, price = 0
+
+    // С помощью цикла for..in выполняем проход по объекту, на каждой итерации суммируя значения целевых полей объекта
+    for (let key in data) {
+        count += data[key].count
+        price += data[key].price_for_all
+    }
+
+    // Используя шаблонизацию выводим полученные данные в консоль
+    console.log(`count ${count}, price ${price}`);
+    
+});
+
+</script>
+
+
